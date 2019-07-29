@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <meta charset="U+00B0"/> -->
+        <meta
+            name="viewpo§rt"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Girls JS - Prognoza Pogody</title>
+
+        <link rel="stylesheet" type="text/css" href="src/styles.css" />
+    </head>
+    <body>
+        <header class="header">
+            <nav class="main-nav">
+                <div class="main-nav__container">
+                    <img src="src/img/logo.svg" alt="Girls JS logo" />
+                    <ul>
+                        <li class="main-nav__item">
+                            <a href="index.html" class="main-nav__link"
+                                >Prognoza</a
+                            >
+                        </li>
+                        <!-- Tutaj dodaj link do podstrony 'O Aplikacji' -->
+                        <li class="main-nav__item">
+                            <a href="o_aplikacji.html" class="main-nav__link"
+                                >O aplikacji</a
+                                                            >
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="content">
+            <form class = 'content__box search-form__wrapper' id="js_search-form">
+                <input class='search-form__input' placeholder="Poznań" id='js_search-input'/>
+                <button type='button' class='search-form__button' id="js_search-btn">
+                    Szukaj
+                </button>
+    
+
+            </form>
+            <section class="content__box results__content">
+                <p class="text instruction show" id="js_instruction">
+                    Wpisz nazwę miasta i naciśnij Szukaj.
+                </p>
+
+                <p class = 'text error' id='js_error-msg'>
+                Nie znaleziono podanego miasta!!!
+            </p>
+                <div class="loader" id="js_loader"></div>
+                
+                <!-- Tutaj dodaj loader -->
+                <div class="results__data-wrapper" id='js_results'>
+                    <div class="results__weather-wrapper">
+                        <h2 class="results__header">Aktualna pogoda</h2>
+                        <img src="" id="js_current-weather-icon"/>
+                        <p class="text">
+                            Temperatura:
+                            <span id='js_current-temp'></span>
+                        </p>
+                    </div>
+                    <div class="results__weather-wrapper">
+                        <h2 class="results__header">
+                            Prognoza pogody na 5 dni
+                        </h2>
+                         <!-- Tutaj wklej canvas dla wykresu -->
+                         <canvas id="myChart"></canvas>
+
+                       
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="src/app.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    </body>
+</html>
